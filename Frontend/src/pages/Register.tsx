@@ -3,7 +3,8 @@ import { useMutation } from "react-query";
 import * as apiClient from "../api-clients";
 import { useAppContext } from "../Context/AppContext";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import { useQueryClient } from "react-query";
 
 export type RegistrationFormData = {
   firstName: string;
@@ -16,6 +17,8 @@ export type RegistrationFormData = {
 const Register = () => {
       const navigate = useNavigate();
       const { showToast } = useAppContext();
+        const queryClient = useQueryClient();
+        
   const {
     register,
     watch,
@@ -24,9 +27,10 @@ const Register = () => {
   } = useForm<RegistrationFormData>();
 
   const mutation = useMutation(apiClient.register, {
-    onSuccess: () => {
+    onSuccess: async() => {
       showToast({ message: "Registration Success!", type: "SUCCESS" });
-      navigate("/");
+        await queryClient.invalidateQueries("validateToken");
+        navigate("/");
     },
     onError: (error: Error) => {
        showToast({ message: error.message, type: "ERROR" });
@@ -110,7 +114,13 @@ const Register = () => {
           <span className="text-red-500">{errors.confirmPassword.message}</span>
         )}
       </label>
-      <span>
+      <span className="flex justify-between">
+        <span className="text-sm">
+          Have an account?
+          <Link className="underline" to="/signin">
+            Login to your account
+          </Link>{" "}
+        </span>
         <button
           type="submit"
           className="bg-green-600 text-white p-2 font-bold hover:bg-green-500 text-xl"
