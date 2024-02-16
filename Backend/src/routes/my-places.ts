@@ -21,10 +21,7 @@ router.post(
     body("country").notEmpty().withMessage("Country is required"),
     body("description").notEmpty().withMessage("Description is required"),
     body("address").notEmpty().withMessage("Hotel address is required"),
-    body("facilities")
-      .notEmpty()
-      .isArray()
-      .withMessage("Facilities are required"),
+    body("type").notEmpty().withMessage("Hotel type is required"),
   ],
   upload.array("imageFile", 6),
   addPlace

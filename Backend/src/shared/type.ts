@@ -6,7 +6,7 @@ export type PlaceType = {
   country: string;
   description: string;
   address: string;
-  facilities: string[];
+  type: string;
   starRating: number;
   imageUrls: string[];
   lastUpdated: Date;
