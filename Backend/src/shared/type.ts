@@ -2,10 +2,10 @@ export type PlaceType = {
   _id: string;
   userId: string;
   name: string;
+  address: string;
   city: string;
   country: string;
   description: string;
-  address: string;
   type: string;
   starRating: number;
   imageUrls: string[];

@@ -56,3 +56,18 @@ export const signOut = async () => {
     throw new Error("Error during sign out");
   }
 };
+
+
+export const addMyPlace = async (placeFormData: FormData) => {
+  const response = await fetch(`${API_BASE_URL}/api/my-places`, {
+    method: "POST",
+    credentials: "include",
+    body: placeFormData,
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to add place");
+  }
+
+  return response.json();
+}; 
