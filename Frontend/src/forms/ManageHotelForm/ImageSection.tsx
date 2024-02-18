@@ -8,17 +8,17 @@ const ImagesSection = () => {
     setValue,
     formState: { errors },
   } = useFormContext<PlaceFormData>();
-  const existingImageUrls = watch("imageUrls");
-  const handleDelete = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    imageUrl: string
-  ) => {
-    event.preventDefault();
-    setValue(
-      "imageUrls",
-      existingImageUrls.filter((url) => url !== imageUrl)
-    );
-  };
+ const existingImageUrls = watch("imageUrls");
+ const handleDelete = (
+   event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+   imageUrl: string
+ ) => {
+   event.preventDefault();
+   setValue(
+     "imageUrls",
+     existingImageUrls.filter((url) => url !== imageUrl)
+   );
+ };
   return (
     <div>
       <div className="text-2xl font-bold mb-3">Images</div>

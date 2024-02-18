@@ -1,7 +1,7 @@
 import express from "express";
 import multer from "multer";
 import verifyToken from "../middleware/auth";
-import { addPlace, getPlaces } from "../controllers/my-places";
+import { addPlace, getPlaces,updatePlace,getPlace } from "../controllers/my-places";
 import { body } from "express-validator";
 
 const router = express.Router();
@@ -27,4 +27,7 @@ router.post(
   addPlace
 );
 router.get("/", verifyToken, getPlaces);
+router.get("/:id", verifyToken, getPlace);
+router.put("/:placeId", verifyToken, upload.array("imageFiles"), updatePlace);
+
 export default router;

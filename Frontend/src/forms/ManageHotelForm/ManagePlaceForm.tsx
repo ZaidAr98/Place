@@ -4,6 +4,7 @@ import TypeSection from "./TypeSection";
 import ImagesSection from "./ImageSection";
 import { PlaceType } from "../../../../backend/src/shared/type";
 import { useEffect } from "react";
+
 export type PlaceFormData = {
   name: string;
   address:string;

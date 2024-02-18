@@ -1,6 +1,7 @@
 import { RegistrationFormData } from "./pages/Register";
 import { SignInFormData } from "./pages/SignIn";
 import { PlaceType } from "../../backend/src/shared/type";
+import { PlaceSearchResponse, PlaceType } from "../../backend/src/shared/type";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const register = async (formData: RegistrationFormData) => {
@@ -84,3 +85,59 @@ export const fetchMyPlaces = async (): Promise<PlaceType[]> => {
 
   return response.json();
 }; 
+
+
+export const fetchMyPlaceById = async (placeId: string): Promise<PlaceType> => {
+  const response = await fetch(`${API_BASE_URL}/api/my-places/${placeId}`, {
+    credentials: "include",
+  });
+
+  if (!response.ok) {
+    throw new Error("Error fetching Places");
+  }
+
+  return response.json();
+};
+
+export const updateMyPlaceById = async (placeFormData: FormData) => {
+  const response = await fetch(
+    `${API_BASE_URL}/api/my-places/${placeFormData.get("placeId")}`,
+    {
+      method: "PUT",
+      body: placeFormData,
+      credentials: "include",
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to update Place");
+  }
+
+  return response.json();
+};
+
+
+export type SearchParams = {
+  destination?: string;
+  page?: string;
+};
+
+
+
+export const searchPlace = async (
+  searchParams: SearchParams
+): Promise<PlaceSearchResponse> => {
+  const queryParams = new URLSearchParams();
+  queryParams.append("destination", searchParams.destination || "");
+  queryParams.append("page", searchParams.page || "");
+
+  const response = await fetch(
+    `${API_BASE_URL}/api/searchPlace/search?${queryParams}`
+  );
+
+  if (!response.ok) {
+    throw new Error("Error fetching places");
+  }
+
+  return response.json();
+};

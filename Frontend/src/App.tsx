@@ -4,6 +4,7 @@ import SignIn from "./pages/SignIn";
 import { useAppContext } from "./Context/AppContext";
 import AddPlace from "./pages/AddPlace";
 import MyPlaces from "./pages/MyPlaces";
+import EditPlace from "./pages/EditPlace";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 function App() {
   const {isLoggedIn} = useAppContext()
@@ -57,6 +58,14 @@ function App() {
               element={
                 <Layout>
                   <MyPlaces />
+                </Layout>
+              }
+            />
+            <Route
+              path="/edit-place/:placeId"
+              element={
+                <Layout>
+                  <EditPlace />
                 </Layout>
               }
             />
