@@ -1,5 +1,6 @@
 import { RegistrationFormData } from "./pages/Register";
 import { SignInFormData } from "./pages/SignIn";
+import { PlaceType } from "../../backend/src/shared/type";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const register = async (formData: RegistrationFormData) => {
@@ -67,6 +68,18 @@ export const addMyPlace = async (placeFormData: FormData) => {
 
   if (!response.ok) {
     throw new Error("Failed to add place");
+  }
+
+  return response.json();
+}; 
+
+
+export const fetchMyPlaces = async (): Promise<PlaceType[]> => {
+  const response = await fetch(`${API_BASE_URL}/api/my-places`, {
+    credentials: "include",
+  });
+  if (!response.ok) {
+    throw new Error("Error fetching places");
   }
 
   return response.json();

@@ -38,3 +38,13 @@ async function uploadImages(imageFiles: Express.Multer.File[]) {
   const imageUrls = await Promise.all(uploadPromises);
   return imageUrls;
 }
+
+
+export const getPlaces = async (req: Request, res: Response) => {
+  try {
+    const places = await Place.find({ userId: req.userId });
+    res.json(places);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching hotels" });
+  }
+};
