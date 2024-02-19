@@ -2,8 +2,11 @@ import { RegistrationFormData } from "./pages/Register";
 import { SignInFormData } from "./pages/SignIn";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { PlaceType } from "../../backend/src/shared/type";
 import { PlaceSearchResponse, PlaceType } from "../../backend/src/shared/type";
+=======
+>>>>>>> parent of 059dbd0 (get hotels)
 =======
 >>>>>>> parent of 059dbd0 (get hotels)
 =======
@@ -80,6 +83,7 @@ export const addMyPlace = async (placeFormData: FormData) => {
   return response.json();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }; 
 
 
@@ -149,6 +153,9 @@ export const searchPlace = async (
 
   return response.json();
 };
+=======
+}; 
+>>>>>>> parent of 059dbd0 (get hotels)
 =======
 }; 
 >>>>>>> parent of 059dbd0 (get hotels)

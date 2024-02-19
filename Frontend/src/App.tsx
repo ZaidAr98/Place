@@ -5,8 +5,11 @@ import { useAppContext } from "./Context/AppContext";
 import AddPlace from "./pages/AddPlace";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import MyPlaces from "./pages/MyPlaces";
 import EditPlace from "./pages/EditPlace";
+=======
+>>>>>>> parent of 059dbd0 (get hotels)
 =======
 >>>>>>> parent of 059dbd0 (get hotels)
 =======
@@ -61,6 +64,7 @@ function App() {
             />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Route
               path="/my-places"
               element={
@@ -77,6 +81,8 @@ function App() {
                 </Layout>
               }
             />
+=======
+>>>>>>> parent of 059dbd0 (get hotels)
 =======
 >>>>>>> parent of 059dbd0 (get hotels)
 =======
