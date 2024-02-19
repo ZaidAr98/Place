@@ -38,9 +38,7 @@ async function uploadImages(imageFiles: Express.Multer.File[]) {
   const imageUrls = await Promise.all(uploadPromises);
   return imageUrls;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 
 export const getPlaces = async (req: Request, res: Response) => {
@@ -96,9 +94,3 @@ export const updatePlace = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Something went throw" });
   }
 };
-=======
->>>>>>> parent of 059dbd0 (get hotels)
-=======
->>>>>>> parent of 059dbd0 (get hotels)
-=======
->>>>>>> parent of 059dbd0 (get hotels)

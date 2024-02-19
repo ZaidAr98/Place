@@ -12,7 +12,7 @@ export type PlaceType = {
   lastUpdated: Date;
 };
 
-export type HotelSearchResponse = {
+export type PlaceSearchResponse = {
   data: PlaceType[];
   pagination: {
     total: number;
