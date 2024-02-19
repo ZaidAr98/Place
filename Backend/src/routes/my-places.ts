@@ -2,7 +2,11 @@ import express from "express";
 import multer from "multer";
 import verifyToken from "../middleware/auth";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { addPlace, getPlaces,updatePlace,getPlace } from "../controllers/my-places";
+=======
+import { addPlace } from "../controllers/my-places";
+>>>>>>> parent of 059dbd0 (get hotels)
 =======
 import { addPlace } from "../controllers/my-places";
 >>>>>>> parent of 059dbd0 (get hotels)
@@ -31,9 +35,12 @@ router.post(
   addPlace
 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 router.get("/", verifyToken, getPlaces);
 router.get("/:id", verifyToken, getPlace);
 router.put("/:placeId", verifyToken, upload.array("imageFiles"), updatePlace);
+=======
+>>>>>>> parent of 059dbd0 (get hotels)
 =======
 >>>>>>> parent of 059dbd0 (get hotels)
 

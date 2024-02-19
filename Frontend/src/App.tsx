@@ -4,8 +4,11 @@ import SignIn from "./pages/SignIn";
 import { useAppContext } from "./Context/AppContext";
 import AddPlace from "./pages/AddPlace";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import MyPlaces from "./pages/MyPlaces";
 import EditPlace from "./pages/EditPlace";
+=======
+>>>>>>> parent of 059dbd0 (get hotels)
 =======
 >>>>>>> parent of 059dbd0 (get hotels)
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
@@ -57,6 +60,7 @@ function App() {
               }
             />
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Route
               path="/my-places"
               element={
@@ -73,6 +77,8 @@ function App() {
                 </Layout>
               }
             />
+=======
+>>>>>>> parent of 059dbd0 (get hotels)
 =======
 >>>>>>> parent of 059dbd0 (get hotels)
           </>
