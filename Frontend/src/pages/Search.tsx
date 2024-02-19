@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useQuery } from "react-query";
 import { useSearchContext } from "../Context/SearchContext";
 import * as apiClient from "../api-clients";
@@ -47,3 +48,14 @@ const Search = () => {
 };
 
 export default Search;
+=======
+import { useSearchContext } from "../Context/SearchContext";
+
+const Search = () => {
+  const search = useSearchContext();
+  console.log(search);
+  return <>Search Page</>;
+};
+
+export default Search;
+>>>>>>> 95669f9 (adding update and search)

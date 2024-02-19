@@ -34,6 +34,6 @@ app.use(
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/my-places", placeRoute);
-app.listen(5000, () => {
+app.listen(5001, () => {
   console.log("server connected to MangoDb");
 });

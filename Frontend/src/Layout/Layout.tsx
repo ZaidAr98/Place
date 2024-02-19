@@ -1,5 +1,5 @@
 import Header from "../Components/Header";
-
+import SearchBar from "../Components/SearchBar";
 import Footer from "../Components/Footer";
 import React from "react";
 
@@ -11,7 +11,9 @@ const Layout = ({children}:Props)=>{
     return (
       <div className="flex flex-col min-h-screen">
         <Header />
-       
+        <div className="container mx-auto mt-10">
+          <SearchBar />
+        </div>
         <div className="container mx-auto py-10 flex-1">{children}</div>
         <Footer />
       </div>
