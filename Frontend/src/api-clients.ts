@@ -1,7 +1,10 @@
 import { RegistrationFormData } from "./pages/Register";
 import { SignInFormData } from "./pages/SignIn";
+<<<<<<< HEAD
 import { PlaceType } from "../../backend/src/shared/type";
 import { PlaceSearchResponse, PlaceType } from "../../backend/src/shared/type";
+=======
+>>>>>>> parent of 059dbd0 (get hotels)
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const register = async (formData: RegistrationFormData) => {
@@ -72,6 +75,7 @@ export const addMyPlace = async (placeFormData: FormData) => {
   }
 
   return response.json();
+<<<<<<< HEAD
 }; 
 
 
@@ -141,3 +145,6 @@ export const searchPlace = async (
 
   return response.json();
 };
+=======
+}; 
+>>>>>>> parent of 059dbd0 (get hotels)

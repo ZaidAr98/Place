@@ -10,7 +10,6 @@ export type PlaceType = {
   starRating: number;
   imageUrls: string[];
   lastUpdated: Date;
-  newProperty: string;
 };
 
 export type HotelSearchResponse = {
