@@ -3,7 +3,6 @@ import cloudinary from "cloudinary";
 import { PlaceType } from "../shared/type";
 import Place from "../models/place";
 
-
 export const addPlace = async (req: Request, res: Response) => {
   try {
     const imageFiles = req.files as Express.Multer.File[];
@@ -94,3 +93,5 @@ export const updatePlace = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Something went throw" });
   }
 };
+
+

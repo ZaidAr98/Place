@@ -21,7 +21,7 @@ const SearchBar = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="-mt-8 p-3 bg-green-800 rounded shadow-md grid grid-cols-2 lg:grid-cols-2 2xl:grid-cols-2 items-center gap-4"
+      className="-mt-8 p-2 bg-green-800 border-none grid grid-cols-2 lg:grid-cols-2 2xl:grid-cols-2 items-center gap-4"
     >
       <div className="flex   justify-between items-center  bg-white p-2">
         <MdTravelExplore size={25} className="mr-2" />

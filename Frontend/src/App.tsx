@@ -3,12 +3,13 @@ import Register from "./pages/Register";
 import SignIn from "./pages/SignIn";
 import { useAppContext } from "./Context/AppContext";
 import AddPlace from "./pages/AddPlace";
-
+import Detail from "./pages/Detail";
 import MyPlaces from "./pages/MyPlaces";
 import EditPlace from "./pages/EditPlace";
 
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import Search from "./pages/Search";
+import Home from "./pages/Home";
 function App() {
   const {isLoggedIn} = useAppContext()
   return (
@@ -18,7 +19,7 @@ function App() {
           path="/"
           element={
             <Layout>
-              <p>HomePage</p>
+             <Home/>
             </Layout>
           }
         />
@@ -26,7 +27,15 @@ function App() {
           path="/search"
           element={
             <Layout>
-              <Search/>
+              <Search />
+            </Layout>
+          }
+        />
+        <Route
+          path="/detail/:placeId"
+          element={
+            <Layout>
+              <Detail />
             </Layout>
           }
         />
@@ -73,7 +82,6 @@ function App() {
                 </Layout>
               }
             />
-
           </>
         )}
         <Route path="*" element={<Navigate to="/" />} />

@@ -146,3 +146,29 @@ export const searchPlaces = async (
 
   return response.json();
 };
+
+
+
+
+export const fetchPlaceDetailUsingId = async (
+  placeId: string
+): Promise<PlaceType> => {
+  const response = await fetch(`${API_BASE_URL}/api/searchPlace/${placeId}`, {
+    credentials: "include",
+  });
+
+  if (!response.ok) {
+    throw new Error("Error fetching Places");
+  }
+
+  return response.json();
+};
+
+
+export const fetchPlaces = async (): Promise<PlaceType[]> => {
+  const response = await fetch(`${API_BASE_URL}/api/searchPlace`);
+  if (!response.ok) {
+    throw new Error("Error fetching places");
+  }
+  return response.json();
+};

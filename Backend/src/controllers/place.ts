@@ -2,6 +2,10 @@
 import { Request,Response } from "express"
 import Place from "../models/place"
 import { PlaceSearchResponse } from "../shared/type"
+import { validationResult } from "express-validator";
+
+
+
 export const getSearch = async (req: Request, res: Response) => {
   try {
      const query = constructSearchQuery(req.query);
@@ -68,3 +72,31 @@ const constructSearchQuery = (queryParams: any) => {
    }
   return constructedQuery
   }
+
+
+  export const getPlaceDetails = async (req: Request, res: Response) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    const id = req.params.id.toString();
+
+    try {
+      const place = await Place.findById(id);
+      res.json(place);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: "Error fetching place " });
+    }
+  };
+
+
+  export const fetchPlaces = async (req: Request, res: Response) => {
+    try {
+      const places = await Place.find().sort("-lastUpdated");
+      res.json(places);
+    } catch (error) {
+      console.log("error", error);
+      res.status(500).json({ message: "Error fetching places" });
+    }
+  };
