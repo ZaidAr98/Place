@@ -8,6 +8,7 @@ import MyPlaces from "./pages/MyPlaces";
 import EditPlace from "./pages/EditPlace";
 
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
+import Search from "./pages/Search";
 function App() {
   const {isLoggedIn} = useAppContext()
   return (
@@ -25,7 +26,7 @@ function App() {
           path="/search"
           element={
             <Layout>
-              <p>SearchPage</p>
+              <Search/>
             </Layout>
           }
         />

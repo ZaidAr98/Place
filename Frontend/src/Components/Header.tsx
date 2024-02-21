@@ -17,14 +17,13 @@ const Header = () => {
                 to="/my-places"
               >
                 My Places
-              
               </Link>
               <SignOutButton />
             </>
           ) : (
             <Link
               to="/signin"
-              className="flex bg-white items-center text-green-600 px-3 font-bold hover:bg-gray-100"
+              className="flex bg-white items-center text-green-600 px-3 font-bold hover:bg-gray-100 "
             >
               Sign In
             </Link>

@@ -1,8 +1,7 @@
 import { RegistrationFormData } from "./pages/Register";
 import { SignInFormData } from "./pages/SignIn";
-
-
 import { PlaceSearchResponse, PlaceType } from "../../backend/src/shared/type";
+
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -123,17 +122,20 @@ export const updateMyPlaceById = async (placeFormData: FormData) => {
 export type SearchParams = {
   destination?: string;
   page?: string;
+  types?: string[];
+  stars?: string[];
 };
 
 
 
-export const searchPlace = async (
+export const searchPlaces = async (
   searchParams: SearchParams
 ): Promise<PlaceSearchResponse> => {
   const queryParams = new URLSearchParams();
   queryParams.append("destination", searchParams.destination || "");
   queryParams.append("page", searchParams.page || "");
-
+   searchParams.types?.forEach((type) => queryParams.append("types", type));
+   searchParams.stars?.forEach((star) => queryParams.append("stars", star));
   const response = await fetch(
     `${API_BASE_URL}/api/searchPlace/search?${queryParams}`
   );

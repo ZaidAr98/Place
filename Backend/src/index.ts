@@ -3,7 +3,7 @@ import express,{Request,Response} from "express"
 import cors from "cors"
 
 import "dotenv/config"
-
+import searchPlacesRoutes from "./routes/places";
 import mongoose from "mongoose"
 import userRoute from "./routes/user";
 import authRoute from "./routes/auth";
@@ -34,6 +34,7 @@ app.use(
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/my-places", placeRoute);
+app.use("/api/searchPlace", searchPlacesRoutes);
 app.listen(5001, () => {
   console.log("server connected to MangoDb");
 });

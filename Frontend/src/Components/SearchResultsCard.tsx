@@ -1,6 +1,7 @@
 import { AiFillStar } from "react-icons/ai";
 import { PlaceType } from "../../../backend/src/shared/type";
 import { Link } from "react-router-dom";
+import { BsBuilding, BsMap } from "react-icons/bs";
 type Props = {
   place: PlaceType;
 };
@@ -33,20 +34,30 @@ const SearchResultsCard = ({ place }: Props) => {
             {place.name}
           </Link>
         </div>
-        <div className="line-clamp-4">{place.description}</div>
+
+        <div className="grid grid-cols-2 gap-2">
+          <div className="border border-slate-300 rounded-sm p-3 flex items-center">
+            <BsMap className="mr-1" />
+            {place.city},{place.country}
+          </div>
+          <div className="border border-slate-300 rounded-sm p-3 flex items-center ">
+            <BsBuilding className="mr-1" />
+            {place.type}
+          </div>
+        </div>
+        <div className="line-clamp-4 p-10">{place.description}</div>
         <div className="grid grid-cols-2 items-end whitespace-nowrap">
           <div className="flex gap-1 items-center">
-          
-              <Link
-                to={`/detail/${place._id}`}
-                className="bg-blue-600 text-white h-full p-2 font-bold text-xl max-w-fit hover:bg-blue-500"
-              >
-                View More
-              </Link>
-            </div>
+            <Link
+              to={`/detail/${place._id}`}
+              className="bg-green-600 text-white h-full p-2 font-bold text-xl max-w-fit hover:bg-green-500"
+            >
+              View More
+            </Link>
           </div>
         </div>
       </div>
+    </div>
   );
 };
 
